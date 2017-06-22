@@ -1,14 +1,14 @@
-UA-FRONTEND
+AS GitHub Page
 ============
 
-run:
+Run locally:
 ------
-run `npm install` to install the dependencies
+- run `npm install` to install the dependencies
 
-(todo) run `npm start` to start the local development
+- run `npm start` to start the local development
 
-deploy:
+Build for deployment:
 -------
-run `npm build` to build the application for production. 
+- run `npm build` to build the application for production. 
 
 there should be a jenkins job listening for any changes.
