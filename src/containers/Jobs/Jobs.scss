@@ -14,7 +14,7 @@
     }
 
     &__heading {
-        margin: 50px 0 0;
+        margin: 0;
         font-size: 26px;
         font-weight: bold;
     }
@@ -24,12 +24,14 @@
     }
 
     &__buttonJobs {
-        margin: 30px 0;
+        margin: 30px 0 0;
         padding: 10px 40px;
         font-size: 24px;
     }
 
     &__text {
         @extend .centeredContainer;
+
+        margin: 60px auto;
     }
 }
