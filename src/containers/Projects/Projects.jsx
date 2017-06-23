@@ -23,7 +23,7 @@ export default class Projects extends Component {
 
   render() {
     return (
-      <section className='projects__container'>
+      <section className='projects__container' id='projects'>
         <h2 className='projects__heading'>Projects</h2>
         <div className='projects__tiles'>
           {this.renderProjectTiles()}

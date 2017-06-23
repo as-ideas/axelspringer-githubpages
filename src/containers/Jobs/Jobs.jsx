@@ -6,7 +6,7 @@ import Gallery from '../../components/Gallery/Gallery'
 export default class Jobs extends Component {
   render() {
     return (
-      <section className='jobs__container'>
+      <section className='jobs__container' id='jobs'>
         <Gallery />
         <div className='jobs__text'>
           <p className='jobs__heading'>Lust bei uns mitzucoden?</p>

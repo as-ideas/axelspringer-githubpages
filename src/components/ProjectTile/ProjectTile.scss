@@ -19,7 +19,8 @@
         margin-bottom: 5px;
         display: flex;
         align-items: center;
-
+        font-weight: 700;
+        
         > span {
             flex: 1;
         }
@@ -40,8 +41,8 @@
         background-color: transparent;
         padding:0;
         margin: 10px 0;
-        font-style: oblique;
-        font-weight: bold;
+        font-style: italic;
+        font-weight: 700;
         font-size: 14px;
         color: $darkgray;
         cursor: pointer;
