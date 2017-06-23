@@ -3,6 +3,7 @@
 .projects{
     &__container {
         @extend .centeredContainer;
+        padding: 30px 20px;
     }
 
     &__heading {

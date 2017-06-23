@@ -4,10 +4,6 @@
     &__container {
         background-color: $background-color-secondary;
         padding: 10px 0px;
-        
-        .socials__container{
-            color: $font-color-secondary;
-        }
     }   
 
     &__content {
@@ -16,6 +12,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        max-width: none;
+        padding: 0 20px;
     }
 
     &__links {
