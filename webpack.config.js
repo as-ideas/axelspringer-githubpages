@@ -37,7 +37,7 @@ module.exports = (env) => {
         module: {
             rules: [
                 {
-                    test: /\.(html|svg)$/,
+                    test: /\.(html|svg|png|jpg)$/,
                     exclude: /node_modules/,
                     use: {
                         loader: 'file-loader',

@@ -12,7 +12,7 @@ export default class Navigation extends Component {
               <img className='navigation__logo' src='as_logo.svg' alt='Axel Springer SE Logo' />
             </a>
           </li>
-          <li className='navigation__item'>
+          <li className='navigation__item navigation__item--active'>
             <a href='#'>Our Projects</a>
           </li>
           <li className='navigation__item'>

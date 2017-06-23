@@ -1,5 +1,53 @@
+@import '../../variables.scss';
+
 .projectTile {
     &__container {
-        
+        min-width: 300px;
+        width: 30%;
+        padding: 20px;
+        border: 1px solid #ddd;
+        margin: 0 1.5% 30px 1.5%;
+        box-sizing: border-box;
+    }
+
+    &__heading {
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 16px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #fff;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+
+        > span {
+            flex: 1;
+        }
+    }
+
+    &__logo {
+        height: 30px;
+    }
+
+    &__description {
+        font-size: 14px;
+        line-height: 1.4;
+        color: $darkgray;
+    }
+
+    &__videoButton {
+        border: 0;
+        background-color: transparent;
+        padding:0;
+        margin: 10px 0;
+        font-style: oblique;
+        font-weight: bold;
+        font-size: 14px;
+        color: $darkgray;
+        cursor: pointer;
+    }
+
+    &__github {
+        background-color: #fff;
     }
 }

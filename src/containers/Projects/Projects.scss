@@ -1,5 +1,23 @@
+@import '../../variables.scss';
+
 .projects{
     &__container {
-        
+        @extend .centeredContainer;
+    }
+
+    &__heading {
+        font-size: 28px;
+        font-weight: bold;
+        color: $font-color-secondary;
+        background-color: $background-color-secondary;
+        display: inline-block;
+        padding: 10px 20px;
+
+        transform: rotate(-3deg);
+    }
+
+    &__tiles {
+        display: flex;
+        flex-wrap: wrap;
     }
 }

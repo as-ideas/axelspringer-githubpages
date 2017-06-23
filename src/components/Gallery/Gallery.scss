@@ -1,5 +1,10 @@
 .gallery {
     &__container {
-        
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__image {
+        width: 25%;
     }
 }
