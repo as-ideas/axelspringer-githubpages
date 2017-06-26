@@ -4,20 +4,23 @@
         "publisher": "asideas",
         "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
         "videoUrl": "https://www.youtube.com/watch?v=7hbZAEqHsOY",
-        "githubId": "github_yeah"
+        "githubId": "lorem-ips",
+        "githubUrl": "https://github.com/as-ideas"
     },
     {
         "title": "consetetur sadipscing elitr",
         "publisher": "bild",
         "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
         "videoUrl": "https://www.youtube.com/watch?v=7hbZAEqHsOY",
-        "githubId": "github_yeah"
+        "githubId": "con-sad-eli",
+        "githubUrl": "https://github.com/as-ideas"
     },
     {
         "title": "diam nonumy eirmod tempor invidunt",
         "publisher": "asideas",
         "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
         "videoUrl": "https://www.youtube.com/watch?v=7hbZAEqHsOY",
-        "githubId": "github_yeah"
+        "githubId": "diam-non",
+        "githubUrl": "https://github.com/as-ideas"
     }
 ]

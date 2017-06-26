@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import GitHubStats from '../GitHubStats/GitHubStats';
 import './ProjectTile.scss';
 
 import '../../static/logo_asideas.png';
@@ -20,7 +21,7 @@ export default class ProjectTile extends Component {
                 </h3>
                 <p className='projectTile__description'>{this.props.projectData.description}</p>
                 <button className='projectTile__videoButton' onClick={this.onClick.bind(this)}><FaPlayCircle /> Erklärvideo</button>
-                <div className='projectTile__github'>GitHub Stat's</div>
+                <GitHubStats githubId={this.props.projectData.githubId} githubUrl={this.props.projectData.githubUrl} />
             </div>
         );
     }
