@@ -18,7 +18,7 @@ export default class GitHubStats extends Component {
     }
 
     componentWillMount() {
-        GitHubService.getStats(this.props.repoId).then((stats) => {
+        GitHubService.getStats(this.props.githubId).then((stats) => {
             let state = this.state;
             state.stats = stats;
             this.setState(state);
