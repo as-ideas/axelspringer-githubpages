@@ -2,7 +2,9 @@
 
 .hero{
     &__container {
-        height: 700px;
+        //height: 700px;
+        height: 100vh;
+        box-sizing: border-box;
         background: #777 url("../../static/work.jpg") no-repeat center center;
         background-size: cover;
         position: relative;
@@ -12,13 +14,13 @@
         .socials {
             &__container{
                 position: absolute;
-                right: 30px;
+                right: 20px;
                 bottom: 30px;
                 font-size: 20px;
             }
+            
             &__item {
-                padding-right: 0;
-                padding-left: 20px;
+                padding: 0 10px;
             }
         }
     }
@@ -41,5 +43,27 @@
         text-align: right;
         font-size: 12px;
         font-style: italic;
+    }
+
+    &__scrollDown {
+        height: 25px;
+        position: absolute;
+
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);  
+
+        animation: jump 4s infinite;
+
+        cursor: pointer;
+    }
+}
+
+@keyframes jump {
+    0%, 10%, 20%, 100% {
+        transform: translateX(-50%) translateY(-10px)
+    }
+    5%, 15% {
+        transform: translateX(-50%) translateY(0px)
     }
 }

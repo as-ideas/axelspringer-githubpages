@@ -50,5 +50,10 @@ a.button {
     border: 1px solid $gray;
     text-decoration: none;
     font-weight: bold;
+    transition: background-color .1s;
+
+    &:hover {
+        background-color: darken($background-color-primary, 10%)
+    }
 }
 
