@@ -39,8 +39,6 @@ export default class Navigation extends Component {
   }
 
   render() {
-    console.log(this.state.active);
-
     return (
       <nav className='navigation__container'>
         <ul className='navigation__list'>

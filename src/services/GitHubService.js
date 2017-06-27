@@ -2,11 +2,11 @@ import HttpService from './HttpService';
 
 class GitHubService {
     constructor() {
-        this.baseUrl = 'http://localhost:3000';
+        this.baseUrl = '/cached-api';
     }
 
-    getStats(githubId) {
-        return HttpService.get(this.baseUrl + '/gitHub/' + githubId);
+    getStats(owner, project) {
+        return HttpService.get(this.baseUrl + '/' + owner + '/' + project);
     }
 }
 

@@ -6,9 +6,6 @@ import ProjectService from '../../services/ProjectService';
 
 export default class Projects extends Component {
 
-  componentWillMount() {
-  }
-
   renderProjectTiles() {
     let tileList = [];
 
