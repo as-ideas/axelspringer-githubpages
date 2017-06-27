@@ -51,7 +51,8 @@ module.exports = (env) => {
                     exclude: /node_modules/,
                     use: [
                         'style-loader',
-                        'css-loader'
+                        'css-loader',
+                        'postcss-loader'
                     ]
                 },
                 {
@@ -60,7 +61,8 @@ module.exports = (env) => {
                     use: [
                         'style-loader',
                         'css-loader',
-                        'sass-loader'
+                        'sass-loader',
+                        'postcss-loader'
                     ]
                 },
                 {
@@ -68,8 +70,8 @@ module.exports = (env) => {
                     exclude: /node_modules/,
                     use: [
                         'babel-loader'
-                    ],
-                },
+                    ]
+                }
             ],
         },
         resolve: {
