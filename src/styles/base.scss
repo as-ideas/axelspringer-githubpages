@@ -2,17 +2,10 @@
 @import './variables';
 
 p {
-    margin: 0;
     color: $font-color-primary;
-    display: inline-block;
-}
-
-html, body {
-    min-height: 100%;
 }
 
 body {
-    margin: 0;
     background-color: $lightgray;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -20,28 +13,13 @@ body {
 
 section {
     max-width: 1200px;
-    margin: 0 auto;
     padding: 30px 40px 10px;
-}
-
-ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
 }
 
 a {
     color: $font-color-primary;
-    text-decoration: none;
     display: inline-block;
 
-    &:hover, :focus {
-        text-decoration: underline;
-    }
-}
-
-img {
-    height: 100%;
 }
 
 a.button {
