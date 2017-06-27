@@ -1,5 +1,6 @@
 @import '../../styles/variables.scss';
 
+
 .navigation{
     &__container {
         position: fixed;
@@ -7,11 +8,57 @@
         top: 0;
         left: 0;
         right: 0;
-        background-color: $background-color-primary;
+        background: $background-color-primary;
         border-bottom: 1px solid $gray;
         box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
         padding: 10px 40px;
         box-sizing: border-box;
+
+        &--dark {
+            background: $background-color-secondary;
+            border-color: $background-color-secondary;
+
+            .navigation {
+                 &__item {
+                    > a{
+                        color: $font-color-secondary;
+                    }
+
+                    border-color: $font-color-secondary;                     
+                 }
+            }
+        }
+
+        &--light {
+            background: $background-color-primary;
+            border-color: $gray;
+            
+            .navigation {
+                 &__item {
+                    > a{
+                        color: $font-color-primary;
+                    }
+
+                    border-color: $font-color-primary;                     
+                 }
+            }
+        }
+
+        &--alpha {
+            background: linear-gradient(#000, transparent); ;
+            border: 0;
+            box-shadow: none;
+            
+            .navigation {
+                 &__item {
+                    > a{
+                        color: $font-color-secondary;
+                    }
+
+                    border-color: $font-color-secondary;                     
+                 }
+            }
+        }
     }
 
     &__list {

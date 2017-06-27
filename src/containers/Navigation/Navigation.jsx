@@ -55,9 +55,6 @@ export default class Navigation extends Component {
           <li className={'navigation__item' + (this.state.active == 'jobs__container' ? ' navigation__item--active' : '')}>
             <a href='#jobs'>Jobs</a>
           </li>
-          <li className='navigation__item'>
-            <a href='#'>How To</a>
-          </li>
         </ul>
       </nav>
     );
