@@ -1,4 +1,7 @@
 var port = process.env.PORT || 3000;
+var apiUrl = process.env.API_URL;
+
+const url = require('url');
 var express = require('express');
 var compression = require('compression');
 var app = express();
@@ -8,19 +11,20 @@ app.use(express.static(__dirname + '/dist'));
 
 const GitHubCache = require('./src/backend/gitHubCache');
 
-app.get('/cached-api/:owner/:project', function (req, res) {
-    let cache = new GitHubCache(listener.address().address, listener.address().port);  // use Mock-Api is on same host as Cached-Api
-    //let cache = new GitHubCache('api.github.com', 443);  // original GitHub-Api
+let cache = null;
 
+app.get('/cached-api/:owner/:project', function (req, res) {
     cache.getStats(req.params.owner, req.params.project).then((stats) => {
         res.send(stats);
-    }).catch((e) => {
-        res.status(404).send(e);
+    }).catch((err) => {
+        res.status(err.statusCode).send(err.statusMessage);
     });
 });
 
 
 
+
+// #######  MOCK API  ##########
 
 let stats = {
     'as-ideas': {
@@ -45,9 +49,19 @@ app.get('/repos/:owner/:project', function (req, res) {
     }
 });
 
+// ###########################
 
 
 
-let listener = app.listen(port, function () {
+app.listen(port, function () {
     console.log('server is now starting on port ', port);
+
+    let gitHubApiUrl = apiUrl || 'http://' + this.address().address + ':' + this.address().port; // Use mock API on dev
+
+    // initialize GitHubCache
+    cache = new GitHubCache({
+        url: url.parse(gitHubApiUrl),
+        user: process.env.USER,
+        pw: process.env.SECRET
+    });
 });

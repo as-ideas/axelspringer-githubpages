@@ -1,13 +1,13 @@
 const http = require('http');
+const https = require('https');
 const url = require('url');
 
 const NodeCache = require("node-cache");
 
 class GitHubCache {
-    constructor(host, port) {
-        this.host = host;
-        this.port = port;
-        this.cache = new NodeCache({ stdTTL: 360 }); // time to live in seconds
+    constructor(options) {
+        this.options = options;
+        this.cache = new NodeCache({ stdTTL: 360 }); // time to live in seconds -> 60 min
     }
 
     getStats(owner, project) {
@@ -21,11 +21,15 @@ class GitHubCache {
 
                         self.syncStats(owner, project)
                             .then((stats) => resolve(stats))
-                            .catch((e) => reject(e));
+                            .catch((err) => {
+                                console.error(err);
+                                reject(err);
+                            });
                     } else {
                         resolve(value);
                     }
                 } else {
+                    console.error(err);
                     reject(err)
                 }
             });
@@ -40,19 +44,36 @@ class GitHubCache {
                         console.log('Sync done for github/' + owner + '/' + project);
                         resolve(body);
                     } else {
+                        console.error(err);
                         reject(err);
                     }
                 });
-            }).catch((e) => reject(e));
+            }).catch((err) => {
+                console.error(err);
+                reject(err);
+            });
         })
     }
 
     getStatsFromGithub(owner, project) {
         return new Promise((resolve, reject) => {
-            http.get({
-                host: this.host,
-                port: this.port,
-                path: '/repos/' + owner + '/' + project
+            let gitHubApiUrl = this.options.url;
+
+            console.log('GET %s//%s:%s%s', gitHubApiUrl.protocol, gitHubApiUrl.hostname, gitHubApiUrl.port, '/repos/' + owner + '/' + project);
+
+            let headers = {
+                'user-agent': 'node.js'
+            }
+
+            if (this.options.user && this.options.pw) headers['Authorization'] = 'Basic ' + new Buffer(this.options.user + ':' + this.options.pw).toString('base64');
+
+            let protocol = gitHubApiUrl.protocol == 'https:' ? https : http;
+            protocol.request({
+                hostname: gitHubApiUrl.hostname,
+                port: gitHubApiUrl.port,
+                path: '/repos/' + owner + '/' + project,
+                method: 'GET',
+                headers: headers
             }, function (res) {
                 var body = '';
                 res.on('data', function (chunk) {
@@ -61,15 +82,20 @@ class GitHubCache {
 
                 res.on('end', function () {
                     if (res.statusCode == 200) {
+                        console.log('Remaining requests:', res.headers['x-ratelimit-remaining'] + ' of ' + res.headers['x-ratelimit-limit']);
                         resolve(body)
                     } else {
-                        reject(res.statusMessage);
+                        console.error(res.statusCode, res.statusMessage);
+                        reject({
+                            statusCode: res.statusCode,
+                            statusMessage: res.statusMessage
+                        });
                     }
                 });
             }).on('error', function (err) {
+                console.error(err);
                 reject(err);
-            });
-
+            }).end();
         })
     }
 }
