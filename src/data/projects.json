@@ -8,18 +8,16 @@
     },
     {
         "title": "consetetur sadipscing elitr",
-        "publisher": "bild",
         "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
         "videoUrl": "https://www.youtube.com/watch?v=7hbZAEqHsOY",
-        "githubId": "con-sad-eli",
-        "githubUrl": "https://github.com/as-ideas"
+        "ownerId": "as-ideas",
+        "projectId": "bla-bla-bla"
     },
     {
         "title": "diam nonumy eirmod tempor invidunt",
-        "publisher": "asideas",
         "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
         "videoUrl": "https://www.youtube.com/watch?v=7hbZAEqHsOY",
-        "githubId": "diam-non",
-        "githubUrl": "https://github.com/as-ideas"
+        "ownerId": "bild-de",
+        "projectId": "videoplayer"
     }
 ]
