@@ -15,17 +15,22 @@ export default class ProgressiveImage extends Component {
                 original.className += ' fadeIn';
             }
         })
-
     }
 
     render() {
-        let thumbStyle = { backgroundImage: 'url(' + this.props.thumbnail + ')' };
-        let origStyle = { backgroundImage: 'url(' + this.props.src + ')' };
+        let thumbStyle = {
+            backgroundImage: 'url(' + this.props.thumbnail + ')',
+            opacity: this.props.thumbnail ? 1 : 0
+        };
+
+        let origStyle = {
+            backgroundImage: 'url(' + this.props.src + ')'
+        };
 
         return (
             <div className={'progressiveImage__container ' + this.props.className}>
                 <div className='progressiveImage__thumbnail progressiveImage__thumbnail--background' style={thumbStyle} />
-                <div className='progressiveImage__thumbnail' ref='thumbnail' style={thumbStyle} />
+                <div className={'progressiveImage__thumbnail' + (this.props.keepRatio ? ' progressiveImage__thumbnail--ratio' : '')} ref='thumbnail' style={thumbStyle} />
                 <div className='progressiveImage__original' ref='original' style={origStyle} />
                 <img className="progressiveImage__dummy" ref='dummy' src={this.props.src} alt='' />
             </div>
