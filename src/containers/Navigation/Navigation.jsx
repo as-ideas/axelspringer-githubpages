@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Navigation.scss';
-import 'static/as_logo.svg';
 
 export default class Navigation extends Component {
 
@@ -44,7 +43,7 @@ export default class Navigation extends Component {
         <ul className='navigation__list'>
           <li className={'navigation__item navigation__item--logo'} >
             <a href='#home'>
-              <img className='navigation__logo' src='as_logo.svg' alt='Axel Springer SE Logo' />
+              <img className='navigation__logo' src='static/as_logo.svg' alt='Axel Springer SE Logo' />
             </a>
           </li>
           <li className={'navigation__item' + (this.state.active == 'projects__container' ? ' navigation__item--active' : '')}>

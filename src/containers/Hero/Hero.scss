@@ -2,11 +2,8 @@
 
 .hero{
     &__container {
-        //height: 700px;
         height: 100vh;
-        box-sizing: border-box;
-        background: #777 url("../../static/work.jpg") no-repeat center center;
-        background-size: cover;
+        box-sizing: border-box;;
         position: relative;
         z-index: 0;
         padding-top: 51px;
@@ -17,6 +14,8 @@
                 right: 20px;
                 bottom: 30px;
                 font-size: 20px;
+
+                z-index: 1;
             }
             
             &__item {
@@ -36,6 +35,8 @@
         line-height: 1.4;
         width: 80%;
         max-width: 800px;
+
+        z-index: 1;
     }
 
     &__author {
@@ -48,7 +49,8 @@
     &__scrollDown {
         height: 25px;
         position: absolute;
-
+        
+        z-index: 3;
         bottom: 10px;
         left: 50%;
         transform: translateX(-50%);  

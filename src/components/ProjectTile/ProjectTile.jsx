@@ -5,9 +5,6 @@ import GitHubService from '../../services/GitHubService';
 
 import './ProjectTile.scss';
 
-import '../../static/logo_asideas.png';
-import '../../static/logo_bild.png';
-
 var FaPlayCircle = require('react-icons/lib/fa/play-circle');
 
 export default class ProjectTile extends Component {

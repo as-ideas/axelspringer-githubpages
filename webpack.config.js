@@ -1,8 +1,14 @@
 const webpack = require('webpack');
 const path = require('path');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env) => {
-    const plugins = [];
+    const plugins = [
+        new CopyWebpackPlugin([
+            { from: 'src/static', to: 'static' }
+        ])
+    ];
+
     if (env && env.prod) {
         plugins.push(
             new webpack.optimize.UglifyJsPlugin({
@@ -37,7 +43,7 @@ module.exports = (env) => {
         module: {
             rules: [
                 {
-                    test: /\.(html|svg|png|jpg)$/,
+                    test: /\.(html)$/,
                     exclude: /node_modules/,
                     use: {
                         loader: 'file-loader',
