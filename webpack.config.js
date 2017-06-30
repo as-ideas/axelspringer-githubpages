@@ -5,7 +5,8 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = (env) => {
     const plugins = [
         new CopyWebpackPlugin([
-            { from: 'src/static', to: 'static' }
+            { from: 'src/static', to: 'static' },
+            { from: 'src/styles/preload.css', to: 'preload.css' }
         ])
     ];
 

@@ -23,7 +23,7 @@ export default class Hero extends Component {
           <span className='hero__author'>Tommy</span>
         </p>
         <Socials />
-        <ProgressiveImage className='hero__image' src='static/work.jpg' thumbnail='static/thumbnails/work.jpg' />
+        <ProgressiveImage className='hero__image' src='static/work.jpg' thumbnail='static/thumbnails/work.jpg' blurRadius='20' />
         <img className='hero__scrollDown' src='static/arrow.png' onClick={this.scrollDown} />
       </header>
     );

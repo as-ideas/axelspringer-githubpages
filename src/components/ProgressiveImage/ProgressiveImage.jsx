@@ -20,7 +20,8 @@ export default class ProgressiveImage extends Component {
     render() {
         let thumbStyle = {
             backgroundImage: 'url(' + this.props.thumbnail + ')',
-            opacity: this.props.thumbnail ? 1 : 0
+            opacity: this.props.thumbnail ? 1 : 0,
+            filter: 'blur(' + (this.props.blurRadius || 10) + 'px)'
         };
 
         let origStyle = {
