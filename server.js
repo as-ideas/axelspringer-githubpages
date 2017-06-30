@@ -83,7 +83,6 @@ app.listen(port, function () {
     // initialize GitHubCache
     cache = new GitHubCache({
         url: url.parse(gitHubApiUrl),
-        user: process.env.USER,
-        pw: process.env.SECRET
+        apiToken: process.env.API_TOKEN
     });
 });

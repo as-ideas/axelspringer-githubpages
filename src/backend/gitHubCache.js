@@ -65,7 +65,7 @@ class GitHubCache {
                 'user-agent': 'node.js'
             }
 
-            if (this.options.user && this.options.pw) headers['Authorization'] = 'Basic ' + new Buffer(this.options.user + ':' + this.options.pw).toString('base64');
+            if (this.options.apiToken) headers['Authorization'] = 'token ' + this.options.apiToken;
 
             let protocol = gitHubApiUrl.protocol == 'https:' ? https : http;
             protocol.request({
