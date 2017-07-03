@@ -16,10 +16,19 @@
                 font-size: 20px;
 
                 z-index: 1;
+                display: flex;
+                align-items: flex-end;
             }
             
             &__item {
                 padding: 0 10px;
+
+                transition: font-size .2s;
+
+                &:hover {
+                    font-size: 40px;
+                    color: #fff;
+                }
             }
         }
     }

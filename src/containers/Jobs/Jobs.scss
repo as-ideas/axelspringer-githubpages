@@ -3,7 +3,7 @@
 .jobs{
     &__container {
         max-width: none;
-        margin: 0 0 60px;
+        margin: 0 0 80px;
         padding: 0;
         text-align: center;
 
@@ -37,7 +37,7 @@
     &__advertisement {
         @extend .centeredContainer;
 
-        margin: 60px 0;
+        margin: 80px 0 40px;
         text-align: center;
     }
 }
