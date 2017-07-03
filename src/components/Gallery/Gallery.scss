@@ -4,7 +4,7 @@
         flex-wrap: wrap;
 
         .progressiveImage__original {
-            transition: filter .3s;
+            transition: opacity 1s, filter .3s;
 
             &:hover {
                 filter: brightness(100%) !important;
