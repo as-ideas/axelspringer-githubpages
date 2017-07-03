@@ -20,5 +20,8 @@
 
     &__image {
         width: 25%;
+        @media screen and (max-width: 750px) {
+            width: 50%;
+        }
     }
 }

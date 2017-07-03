@@ -11,6 +11,10 @@
 
         transition: background-color .2s;
 
+        @media screen and (max-width: 750px) {
+            width: 100%;
+        }
+
         .gitHubStats__container {
             transition: background-color .2s;
         }
