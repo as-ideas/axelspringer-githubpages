@@ -12,8 +12,10 @@ export default class Navigation extends Component {
   }
 
   isVisible(query) {
+    let navHeight = document.querySelector('nav').offsetHeight;
+
     let scrollOffset = window.pageYOffset;
-    return window.pageYOffset >= this.getElemOffset(query);
+    return window.pageYOffset >= this.getElemOffset(query) - navHeight;
   }
 
   getElemOffset(query) {
@@ -33,6 +35,13 @@ export default class Navigation extends Component {
     }
   }
 
+  goTo(query) {
+    let navHeight = document.querySelector('nav').offsetHeight;
+    let elemOffset = this.getElemOffset(query);
+
+    window.scrollTo(0, elemOffset - navHeight);
+  }
+
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll.bind(this));
   }
@@ -41,16 +50,14 @@ export default class Navigation extends Component {
     return (
       <nav className='navigation__container'>
         <ul className='navigation__list'>
-          <li className={'navigation__item navigation__item--logo'} >
-            <a href='#home'>
-              <img className='navigation__logo' src='static/as_logo.svg' alt='Axel Springer SE Logo' />
-            </a>
+          <li onClick={this.goTo.bind(this, '#home')} className={'navigation__item navigation__item--logo'} >
+            <img className='navigation__logo' src='static/as_logo.svg' alt='Axel Springer SE Logo' />
           </li>
-          <li className={'navigation__item' + (this.state.active == 'projects__container' ? ' navigation__item--active' : '')}>
-            <a href='#projects'>Our Projects</a>
+          <li onClick={this.goTo.bind(this, '#projects')} className={'navigation__item' + (this.state.active == 'projects__container' ? ' navigation__item--active' : '')}>
+            Our Projects
           </li>
-          <li className={'navigation__item' + (this.state.active == 'jobs__container' ? ' navigation__item--active' : '')}>
-            <a href='#jobs'>Jobs</a>
+          <li onClick={this.goTo.bind(this, '#jobs')} className={'navigation__item' + (this.state.active == 'jobs__container' ? ' navigation__item--active' : '')}>
+            Jobs
           </li>
         </ul>
       </nav>
