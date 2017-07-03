@@ -32,7 +32,7 @@ export default class ProjectTile extends Component {
         return (
             <div className='projectTile__container'>
                 <h3 className='projectTile__heading'>
-                    <span>{this.props.projectData.title}</span>
+                    <a href={this.state.stats.html_url}>{this.props.projectData.title}</a>
                     <img className='projectTile__logo' src={this.state.stats.owner ? this.state.stats.owner.avatar_url : ''} />
                 </h3>
                 <p className='projectTile__description'>{this.props.projectData.description}</p>
