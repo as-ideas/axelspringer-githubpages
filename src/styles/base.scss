@@ -35,3 +35,15 @@ a.button {
     }
 }
 
+h2.sectionHeading {
+    font-size: 28px;
+    font-weight: 700;
+    color: $font-color-secondary;
+    background-color: $background-color-secondary;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 25px 0;
+    -webkit-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+}

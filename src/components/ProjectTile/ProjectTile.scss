@@ -8,6 +8,15 @@
         border: 1px solid #ddd;
         margin: 0 1.5% 30px;
         box-sizing: border-box;
+
+        &:hover {
+            background-color: #f7f7f7;
+
+            .gitHubStats__container {
+                background-color: #fff;
+
+            }
+        }
     }
 
     &__heading {

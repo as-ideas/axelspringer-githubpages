@@ -8,12 +8,15 @@ export default class Jobs extends Component {
     return (
       <section className='jobs__container' id='jobs'>
         <Gallery />
-        <div className='jobs__text'>
-          <p className='jobs__heading'>Lust bei uns mitzucoden?</p>
-          <p className='jobs__subheading'>Dann gleich auf unserem Karriereportal nachschauen:</p>
-          <p className='jobs__subheading'><strong>Wir haben viele offene IT-Stellen!</strong></p>
-          <a className='jobs__buttonJobs button' href="https://career.axelspringer.com/">Hier geht's zu unseren Jobs</a>
+        {/*<div className='jobs__headingContainer'>
+          <h2 className='sectionHeading jobs__heading'>Jobs</h2>
+        </div>*/}
+        <div className='jobs__advertisement'>
+          <p className='jobs__adHeading'>Lust bei uns mitzucoden?</p>
+          <p className='jobs__adSubheading'>Dann gleich auf unserem Karriereportal nachschauen:</p>
+          <p className='jobs__adSubheading'><strong>Wir haben viele offene IT-Stellen!</strong></p>
         </div>
+        <a className='jobs__buttonJobs button' href="https://career.axelspringer.com/">Hier geht's zu unseren Jobs</a>
       </section>
     );
   }
