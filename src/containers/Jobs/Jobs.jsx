@@ -7,10 +7,10 @@ export default class Jobs extends Component {
   render() {
     return (
       <section className='jobs__container' id='jobs'>
-        <Gallery />
-        {/*<div className='jobs__headingContainer'>
+        <div className='jobs__headingContainer'>
           <h2 className='sectionHeading jobs__heading'>Jobs</h2>
-        </div>*/}
+        </div>
+        <Gallery />
         <div className='jobs__advertisement'>
           <p className='jobs__adHeading'>Lust bei uns mitzucoden?</p>
           <p className='jobs__adSubheading'>Dann gleich auf unserem Karriereportal nachschauen:</p>

@@ -15,8 +15,14 @@
 
     &__headingContainer {
         @extend .centeredContainer;
-
         text-align: left;    
+    }
+
+    &__heading {
+        margin-bottom: -20px !important;
+        position: relative;
+        z-index: 1;
+        border: 2px solid #fff;
     }
 
     &__adHeading {
