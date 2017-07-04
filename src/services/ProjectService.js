@@ -1,4 +1,4 @@
-var data = require('json-loader!../data/projects.json');
+import projectData from '../data/projects'
 
 class ProjectService {
     constructor() {
@@ -6,7 +6,7 @@ class ProjectService {
     }
 
     getProjects() {
-        return data;
+        return projectData;
     }
 }
 

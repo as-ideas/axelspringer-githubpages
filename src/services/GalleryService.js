@@ -1,4 +1,4 @@
-var data = require('json-loader!../data/jobImages.json');
+import images from '../data/jobImages'
 
 class GalleryService {
     constructor() {
@@ -6,7 +6,7 @@ class GalleryService {
     }
 
     getImages() {
-        return data;
+        return images;
     }
 }
 

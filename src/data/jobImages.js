@@ -1,4 +1,4 @@
-[
+export default [
     {
         "imgUrl": "static/job1.jpg",
         "thumbnail": "static/thumbnails/job1.jpg"

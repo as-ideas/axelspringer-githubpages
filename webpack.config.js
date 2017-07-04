@@ -44,6 +44,13 @@ module.exports = (env) => {
         module: {
             rules: [
                 {
+                    test: /\.(js|jsx)$/,
+                    exclude: /node_modules/,
+                    use: [
+                        'babel-loader'
+                    ]
+                },
+                {
                     test: /\.(html)$/,
                     exclude: /node_modules/,
                     use: {
@@ -70,13 +77,6 @@ module.exports = (env) => {
                         'css-loader',
                         'postcss-loader',
                         'sass-loader'
-                    ]
-                },
-                {
-                    test: /\.(js|jsx)$/,
-                    exclude: /node_modules/,
-                    use: [
-                        'babel-loader'
                     ]
                 }
             ],
