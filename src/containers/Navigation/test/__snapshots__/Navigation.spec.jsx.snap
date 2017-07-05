@@ -4,6 +4,14 @@ exports[`Navigation component should render as expected 1`] = `
 <nav
   className="navigation__container"
 >
+  <div
+    className="navigation__toggle"
+    onClick={[Function]}
+  >
+    <span />
+    <span />
+    <span />
+  </div>
   <ul
     className="navigation__list"
   >
