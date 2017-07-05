@@ -11,9 +11,9 @@ exports[`App component should render as expected 1`] = `
       className="navigation__toggle"
       onClick={[Function]}
     >
-      <span />
-      <span />
-      <span />
+      <span>
+        menü
+      </span>
     </div>
     <ul
       className="navigation__list"
