@@ -46,6 +46,9 @@
         max-width: 800px;
 
         z-index: 1;
+            @media screen and (max-width : 500px) {
+                    bottom: 50%;
+            }
     }
 
     &__author {
