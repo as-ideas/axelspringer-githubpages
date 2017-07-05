@@ -1,18 +1,20 @@
 @import '../../styles/variables.scss';
 
-
 .navigation{
     &__container {
         position: fixed;
-        z-index: 1;
         top: 0;
         left: 0;
         right: 0;
+
+        z-index: 10;
+
         background: $background-color-primary;
         border-bottom: 1px solid $gray;
         box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
-        padding: 10px 40px;
+
         box-sizing: border-box;
+        padding: 10px 40px;
 
         &--dark {
             background: $background-color-secondary;
@@ -64,19 +66,22 @@
     &__list {
         display: flex;
         flex-direction: row;
+
         align-items: center;
         max-width: 1200px;
         margin: 0 auto;
     }
 
     &__item {
-        text-transform: uppercase;
-        font-size: 16px;
         flex: 0;
-        white-space: nowrap;
-        margin-right: 35px;
         position: relative;
+
         padding: 0 5px;
+        margin-right: 35px;
+
+        font-size: 16px;
+        white-space: nowrap;
+        text-transform: uppercase;
 
         &:before {
             content: '';
@@ -141,5 +146,119 @@
 
     &__logo {
         height: 30px;
+    }
+
+    &__toggle {
+        display: none;
+    }
+
+    @media screen and (max-width : 500px) {
+        &__container {
+            padding: 0px;
+        }
+
+        &__list {
+            flex-direction: column;
+
+             &.open {
+                background-color: rgba(0,0,0,0.5);
+                height: 100%;
+
+                .navigation__item {
+                    display: block;
+                    background-color: #fff;
+                }
+            }
+        }
+
+        &__item {
+            display: none;
+            transition: opacity 2s;
+
+            width: 100%;
+            margin: 0;
+            padding: 10px;
+
+            text-align: center;
+            border-top: 1px solid $gray;
+
+            &:before, &:after {
+                content: none;
+            }
+
+            &--logo {
+                display: block !important;
+                opacity: 1 !important;
+
+                position: relative;
+                border: 0;
+            }
+
+            &:hover {
+                transform: none;
+            }
+        }
+
+
+        &__toggle {
+            display: inline-block;
+            z-index: 2;
+
+            width: 40px;
+            height: 26px;
+            position: absolute;
+            top: 13px;
+            right: 13px;
+
+
+            > span {
+                position: absolute;
+                height: 14%;
+                width: 100%;
+                left: 0;
+
+                background: $darkestgray;
+
+                opacity: 1;
+                transform: rotate(0deg);
+
+                transition: .2s;
+
+                &:nth-child(1) {
+                    top: 0%;
+                }
+
+                &:nth-child(2) {
+                    top: 43%;     
+                    right: 0;               
+                }
+
+                &:nth-child(3) {
+                    top: 86%;                    
+                }
+            }
+
+            &.open {
+                > span {
+                    &:nth-child(1) {
+                        transform: rotate(45deg);
+                        top: 43%;                    
+                    }
+
+                    &:nth-child(2) {
+                        opacity: 0;   
+                        width:0%;   
+                        right: 50%;
+                        left: 50%;
+                    }
+
+                    &:nth-child(3) {
+                        transform: rotate(-45deg);
+                        top: 43%;                    
+                    }
+                }
+            }
+        }
+
     }
 }

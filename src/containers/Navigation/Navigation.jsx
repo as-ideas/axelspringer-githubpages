@@ -7,12 +7,19 @@ export default class Navigation extends Component {
     super(props);
 
     this.state = {
-      active: ''
+      active: '',
+      showMenu: false
     }
   }
 
   isVisible(query) {
-    let navHeight = document.querySelector('nav').offsetHeight;
+    let navHeight;
+
+    if (this.state.showMenu) {
+      navHeight = document.querySelector('.navigation__item--logo').offsetHeight;
+    } else {
+      navHeight = document.querySelector('nav').offsetHeight;
+    }
 
     let scrollOffset = window.pageYOffset;
     return window.pageYOffset >= this.getElemOffset(query) - navHeight;
@@ -29,27 +36,50 @@ export default class Navigation extends Component {
     if (this.isVisible('.jobs__container')) active = 'jobs__container';
 
     if (active != this.state.active) {
-      this.setState({
-        active: active
-      });
+      let state = this.state;
+      state.active = active
+      this.setState(state);
     }
   }
 
   goTo(query) {
-    let navHeight = document.querySelector('nav').offsetHeight;
+    let navHeight;
+
+    if (this.state.showMenu) {
+      navHeight = document.querySelector('.navigation__item--logo').offsetHeight;
+    } else {
+      navHeight = document.querySelector('nav').offsetHeight;
+    }
+
     let elemOffset = this.getElemOffset(query);
 
     window.scrollTo(0, elemOffset - navHeight);
+
+
+    let state = this.state;
+    state.showMenu = false;
+    this.setState(state);
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll.bind(this));
   }
 
+  toggleMenu() {
+    let state = this.state;
+    state.showMenu = !state.showMenu;
+    this.setState(state);
+  }
+
   render() {
     return (
-      <nav className='navigation__container'>
-        <ul className='navigation__list'>
+      <nav className={'navigation__container'}>
+        <div className={"navigation__toggle" + (this.state.showMenu ? ' open' : '')} onClick={this.toggleMenu.bind(this)} >
+          <span />
+          <span />
+          <span />
+        </div>
+        <ul className={'navigation__list' + (this.state.showMenu ? ' open' : '')} >
           <li onClick={this.goTo.bind(this, '#home')} className={'navigation__item navigation__item--logo'} >
             <img className='navigation__logo' src='static/as_logo.svg' alt='Axel Springer SE Logo' />
           </li>
