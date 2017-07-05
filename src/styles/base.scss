@@ -31,6 +31,7 @@ a.button {
 
     position: relative;
 
+
     &:before {
         content: '';
         position: absolute;
@@ -41,6 +42,10 @@ a.button {
         background-color: #fff;
         z-index: -1;
         transition: 0.4s;
+
+        @media screen and (max-width : 500px) {
+            width: 100%;
+        }
     }
 
     &:hover {

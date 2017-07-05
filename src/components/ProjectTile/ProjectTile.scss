@@ -11,15 +11,23 @@
 
         transition: background-color .2s;
 
-        @media screen and (max-width: 750px) {
-            width: 100%;
-        }
-
         .gitHubStats__container {
             transition: background-color .2s;
         }
 
         &:hover {
+            background-color: #f7f7f7;
+
+            .gitHubStats__container {
+                background-color: #fff;
+            }
+        }
+
+        @media screen and (max-width: 750px) {
+            width: 100%;
+        }
+
+        @media screen and (max-width : 500px) {
             background-color: #f7f7f7;
 
             .gitHubStats__container {
