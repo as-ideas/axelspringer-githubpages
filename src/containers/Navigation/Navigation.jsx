@@ -68,6 +68,13 @@ export default class Navigation extends Component {
   toggleMenu() {
     let state = this.state;
     state.showMenu = !state.showMenu;
+
+    let body = document.querySelector('body');
+    if (state.showMenu) {
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = 'auto';
+    }
     this.setState(state);
   }
 
@@ -75,9 +82,7 @@ export default class Navigation extends Component {
     return (
       <nav className={'navigation__container'}>
         <div className={"navigation__toggle" + (this.state.showMenu ? ' open' : '')} onClick={this.toggleMenu.bind(this)} >
-          <span />
-          <span />
-          <span />
+          <span>menü</span>
         </div>
         <ul className={'navigation__list' + (this.state.showMenu ? ' open' : '')} >
           <li onClick={this.goTo.bind(this, '#home')} className={'navigation__item navigation__item--logo'} >
