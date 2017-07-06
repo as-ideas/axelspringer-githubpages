@@ -1,15 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Gallery.scss';
 
 import GalleryService from '../../services/GalleryService';
 import ProgressiveImage from '../../components/ProgressiveImage/ProgressiveImage';
 
-export default class Gallery extends Component {
-    constructor(props) {
-        super(props)
-    }
-
-    rednerImages() {
+export const Gallery = (props) => {
+    function renderImages() {
         let images = [];
 
         GalleryService.getImages().forEach((image, index) => {
@@ -21,12 +17,10 @@ export default class Gallery extends Component {
         return images;
     }
 
+    return (
+        <div className='gallery__container'>
+            {renderImages()}
+        </div>
+    );
 
-    render() {
-        return (
-            <div className='gallery__container'>
-                {this.rednerImages()}
-            </div>
-        );
-    }
 }

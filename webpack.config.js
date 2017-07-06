@@ -12,6 +12,11 @@ module.exports = (env) => {
 
     if (env && env.prod) {
         plugins.push(
+            new webpack.DefinePlugin({
+                'process.env': {
+                    NODE_ENV: JSON.stringify('production')
+                }
+            }),
             new webpack.optimize.UglifyJsPlugin({
                 compress: {
                     warnings: false,
@@ -62,7 +67,6 @@ module.exports = (env) => {
                 },
                 {
                     test: /\.css$/,
-                    exclude: /node_modules/,
                     use: [
                         'style-loader',
                         'css-loader',

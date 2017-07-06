@@ -6,12 +6,17 @@ var FaUsers = require('react-icons/lib/fa/user');
 var FaStar = require('react-icons/lib/go/star');
 var FaCode = require('react-icons/lib/go/code');
 
+import TrackerService from '../../services/TrackingService'
+
 export default class GitHubStats extends Component {
     constructor(props) {
         super(props)
     }
 
     openRepo() {
+        console.log('Track: goToRepo');
+        TrackerService.track('goToRepo / ' + this.props.stats.name);
+
         window.open(this.props.stats.html_url, '_blank');
     }
 

@@ -69,12 +69,6 @@ export default class Navigation extends Component {
     let state = this.state;
     state.showMenu = !state.showMenu;
 
-    // let body = document.querySelector('body');
-    // if (state.showMenu) {
-    //   body.style.overflow = 'hidden';
-    // } else {
-    //   body.style.overflow = 'auto';
-    // }
     this.setState(state);
   }
 

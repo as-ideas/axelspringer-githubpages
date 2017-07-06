@@ -6,6 +6,7 @@ import GitHubService from '../../services/GitHubService';
 import './ProjectTile.scss';
 
 var FaPlayCircle = require('react-icons/lib/fa/play-circle');
+import TrackerService from '../../services/TrackingService'
 
 export default class ProjectTile extends Component {
     constructor(props) {
@@ -24,8 +25,16 @@ export default class ProjectTile extends Component {
         });
     }
 
-    onClick() {
+    openVideo() {
+        console.log('Track: openVideo');
+        TrackerService.track('openVideo / ' + this.props.projectData.videoUrl);
+
         window.open(this.props.projectData.videoUrl, '_blank');
+    }
+
+    goToRepo() {
+        console.log('Track: goToRepo');
+        TrackerService.track('goToRepo / ' + this.state.stats.name);
     }
 
     render() {
@@ -36,7 +45,7 @@ export default class ProjectTile extends Component {
                     <img className='projectTile__logo' src={this.state.stats.owner ? this.state.stats.owner.avatar_url : ''} />
                 </h3>
                 <p className='projectTile__description'>{this.props.projectData.description}</p>
-                <button className='projectTile__videoButton' onClick={this.onClick.bind(this)}><FaPlayCircle /> Erklärvideo</button>
+                <button className='projectTile__videoButton' onClick={this.openVideo.bind(this)}><FaPlayCircle /> Erklärvideo</button>
                 <GitHubStats stats={this.state.stats} />
             </div>
         );

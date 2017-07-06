@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import './Jobs.scss';
 
-import Gallery from '../../components/Gallery/Gallery'
+import { Gallery } from '../../components/Gallery/Gallery'
+import TrackerService from '../../services/TrackingService'
 
 export default class Jobs extends Component {
+  goToJobs() {
+    console.log('Track: goToJobs');
+    TrackerService.track('goToJobs');
+  }
+
   render() {
     return (
       <section className='jobs__container' id='jobs'>
@@ -16,7 +22,7 @@ export default class Jobs extends Component {
           <p className='jobs__adSubheading'>Dann gleich auf unserem Karriereportal nachschauen:</p>
           <p className='jobs__adSubheading'><strong>Wir haben viele offene IT-Stellen!</strong></p>
         </div>
-        <a className='jobs__buttonJobs button' href="https://career.axelspringer.com/">Hier geht's zu unseren Jobs</a>
+        <a onClick={this.goToJobs} className='jobs__buttonJobs button' href="https://career.axelspringer.com/">Hier geht's zu unseren Jobs</a>
       </section>
     );
   }

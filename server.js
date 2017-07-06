@@ -9,7 +9,7 @@ var app = express();
 app.use(compression());
 app.use(express.static(__dirname + '/dist'));
 
-const GitHubCache = require('./src/backend/gitHubCache');
+const GitHubCache = require('./gitHubCache');
 
 let cache = null;
 
