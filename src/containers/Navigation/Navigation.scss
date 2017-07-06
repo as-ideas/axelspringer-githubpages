@@ -70,6 +70,7 @@
         align-items: center;
         max-width: 1200px;
         margin: 0 auto;
+        line-height: 1.2;
     }
 
     &__item {
@@ -160,18 +161,19 @@
         &__list {
             flex-direction: column;
 
-            transition: height .2s;
+            transition: height .3s;
             height: 50px;
 
             &.open {
                 background-color: rgba(0,0,0,0.5);
-                height: 128px;
+                height: 130px;
             }
         }
 
         &__item {
             position: absolute;
 
+            left: 0;
             width: 100%;
             margin: 0;
             padding: 10px;
@@ -182,13 +184,11 @@
             bottom: 0;
 
             &:nth-child(2) {
-                bottom: 38px;
-                transition-delay: 0;
+                bottom: 39px;
             }
 
             &:nth-child(3) {
                 bottom: 0px;
-                transition-delay: 0.1s;
             }
 
 
