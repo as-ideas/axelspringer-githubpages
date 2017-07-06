@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.scss';
 
 import Navigation from '../Navigation/Navigation'
@@ -9,20 +9,16 @@ import Footer from '../Footer/Footer'
 
 import TrackerService from '../../services/TrackingService'
 
-export default class App extends Component {
-
-
-  render() {
+export default (props) => {
     TrackerService.track();
 
     return (
-      <article className='app__container'>
-        <Navigation />
-        <Hero />
-        <Projects />
-        <Jobs />
-        <Footer />
-      </article>
+        <article className='app__container'>
+            <Navigation />
+            <Hero />
+            <Projects />
+            <Jobs />
+            <Footer />
+        </article>
     );
-  }
 }

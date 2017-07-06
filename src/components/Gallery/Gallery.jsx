@@ -4,7 +4,7 @@ import './Gallery.scss';
 import GalleryService from '../../services/GalleryService';
 import ProgressiveImage from '../../components/ProgressiveImage/ProgressiveImage';
 
-export const Gallery = (props) => {
+export default (props) => {
     function renderImages() {
         let images = [];
 

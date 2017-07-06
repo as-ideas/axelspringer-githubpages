@@ -4,9 +4,8 @@ import './Projects.scss';
 import ProjectTile from '../../components/ProjectTile/ProjectTile';
 import ProjectService from '../../services/ProjectService';
 
-export default class Projects extends Component {
-
-  renderProjectTiles() {
+export default (props) => {
+  function renderProjectTiles() {
     let tileList = [];
 
     ProjectService.getProjects().forEach((project, index) => {
@@ -18,14 +17,12 @@ export default class Projects extends Component {
     return tileList;
   }
 
-  render() {
-    return (
-      <section className='projects__container' id='projects'>
-        <h2 className='sectionHeading projects__heading'>Projects</h2>
-        <div className='projects__tiles'>
-          {this.renderProjectTiles()}
-        </div>
-      </section>
-    );
-  }
+  return (
+    <section className='projects__container' id='projects'>
+      <h2 className='sectionHeading projects__heading'>Projects</h2>
+      <div className='projects__tiles'>
+        {renderProjectTiles()}
+      </div>
+    </section>
+  );
 }

@@ -39,6 +39,7 @@ exports[`Jobs component should render as expected 1`] = `
   <a
     className="jobs__buttonJobs button"
     href="https://career.axelspringer.com/"
+    onClick={[Function]}
   >
     Hier geht's zu unseren Jobs
   </a>
