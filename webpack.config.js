@@ -50,7 +50,10 @@ module.exports = (env) => {
             rules: [
                 {
                     test: /\.(js|jsx)$/,
-                    exclude: /node_modules/,
+                    include: [
+                        path.resolve(__dirname, "src"),
+                        path.resolve(__dirname, "node_modules/piwik-tracker")
+                    ],
                     use: [
                         'babel-loader'
                     ]
@@ -71,6 +74,10 @@ module.exports = (env) => {
                         'style-loader',
                         'css-loader',
                         'postcss-loader'
+                    ],
+                    include: [
+                        path.resolve(__dirname, "src"),
+                        path.resolve(__dirname, "node_modules/normalize.css")
                     ]
                 },
                 {

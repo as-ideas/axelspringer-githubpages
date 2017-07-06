@@ -12,12 +12,11 @@ class TrackingService {
         this.tracker.on('error', function (err) {
             console.error('Error tracking request: ', err)
         })
-
     }
 
     track(action) {
         let track = {
-            url: window.location.href,
+            url: window.location.href
         };
 
         if (action) track.action_name = action;
