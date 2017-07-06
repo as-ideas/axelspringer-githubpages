@@ -27,14 +27,14 @@ export default class ProjectTile extends Component {
 
     openVideo() {
         console.log('Track: openVideo');
-        TrackerService.track('openVideo / ' + this.props.projectData.videoUrl);
+        TrackerService.trackEvent('Projects', 'openVideo', this.props.projectData.videoUrl);
 
         window.open(this.props.projectData.videoUrl, '_blank');
     }
 
     goToRepo() {
         console.log('Track: goToRepo');
-        TrackerService.track('goToRepo / ' + this.state.stats.name);
+        TrackerService.trackEvent('Projects', 'goToRepo', this.state.stats.name);
     }
 
     render() {

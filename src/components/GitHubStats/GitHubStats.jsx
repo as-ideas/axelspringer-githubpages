@@ -12,7 +12,7 @@ export default (props) => {
 
     function openRepo() {
         console.log('Track: goToRepo');
-        TrackerService.track('goToRepo / ' + props.stats.name);
+        TrackerService.trackEvent('Projects', 'goToRepo', props.stats.name);
 
         window.open(props.stats.html_url, '_blank');
     }

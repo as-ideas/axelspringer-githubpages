@@ -10,7 +10,7 @@ import Footer from '../Footer/Footer'
 import TrackerService from '../../services/TrackingService'
 
 export default (props) => {
-    TrackerService.track();
+    TrackerService.trackPage();
 
     return (
         <article className='app__container'>

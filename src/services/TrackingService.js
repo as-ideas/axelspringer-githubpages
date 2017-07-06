@@ -14,12 +14,19 @@ class TrackingService {
         })
     }
 
-    track(action) {
+    trackPage() {
+        this.tracker.track(window.location.href);
+    }
+
+    trackEvent(category, action, name) {
         let track = {
             url: window.location.href
         };
 
-        if (action) track.action_name = action;
+        if (name) track.e_n = name;
+        if (action) track.e_a = action;
+        if (category) track.e_c = category;
+
 
         this.tracker.track(track);
     }

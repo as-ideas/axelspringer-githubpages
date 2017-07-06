@@ -7,7 +7,7 @@ import TrackerService from '../../services/TrackingService'
 export default (props) => {
     function goToJobs() {
         console.log('Track: goToJobs');
-        TrackerService.track('goToJobs');
+        TrackerService.trackEvent('Jobs', 'goToJobs', null)
     }
 
     return (
