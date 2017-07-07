@@ -1,16 +1,15 @@
 import React from 'react';
 import './Socials.scss';
 
-var FaFacebook = require('react-icons/lib/fa/facebook');
-var FaTwitter = require('react-icons/lib/fa/twitter');
-var FaGooglePlus = require('react-icons/lib/fa/google-plus');
+var FontAwesome = require('react-fontawesome');
 
 export default (props) => {
     return (
-        <p className='socials__container'>
-            <a href='https://www.facebook.com/AxelSpringerKarriere/' className='socials__item'><FaFacebook /></a>
-            <a href='' className='socials__item'><FaGooglePlus /></a>
-            <a href='https://twitter.com/axelspringer' className='socials__item'><FaTwitter /></a>
+        <p className={'socials__container ' + props.className}>
+            <a href='https://www.xing.com/companies/axelspringerse' className='socials__item'><FontAwesome name='xing' /></a>
+            <a href='https://de.linkedin.com/company/axel-springer-se' className='socials__item'><FontAwesome name='linkedin' /></a>
+            <a href='https://www.instagram.com/axel_springer_karriere/' className='socials__item'><FontAwesome name='instagram' /></a>
+            <a href='https://www.facebook.com/AxelSpringerKarriere/' className='socials__item'><FontAwesome name='facebook' /></a>
         </p>
     );
 }

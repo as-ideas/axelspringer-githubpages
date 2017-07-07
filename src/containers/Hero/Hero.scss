@@ -1,61 +1,83 @@
 @import '../../styles/variables.scss';
 
 .hero{
+
     &__container {
         height: 100vh;
-        box-sizing: border-box;;
+        display: flex;
+        padding-top: 51px;
+        flex-direction: column;
+    }
+
+    &__imageContainer {
         position: relative;
         z-index: 0;
-        padding-top: 51px;
+        flex: 1;
+    }
+    
+    &__image {}
 
-        .socials {
-            &__container{
-                position: absolute;
-                right: 20px;
-                bottom: 30px;
-                font-size: 20px;
+    &__bottomContainer {
+        flex: 0;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        display: flex;
+        padding: 20px;
 
-                z-index: 1;
-                display: flex;
-                align-items: flex-end;
-            }
-            
-            &__item {
-                padding: 0 10px;
+        align-items: flex-end;
+    }
 
-                transition: font-size .2s;
+    &__bottomText {
+        font-size: 38px;
+        font-weight: bold;
+        color: $font-color-secondary;
+        line-height: 1.2;
 
-                &:hover {
-                    font-size: 40px;
-                    color: #fff;
-                }
-            }
+        flex-shrink: 0;
+        margin-right: auto;
+
+        @media screen and (max-width : 500px) {
+            line-height: 1;
+            font-size: 20px;
         }
     }
 
-    &__text {
-        padding: 15px 20px;
-        background-color: rgba(0,0,0,0.6);
-        position: absolute;
-        bottom: 40%;
-        left: 50%;
-        transform: translate(-50%, 50%);
-        color: $font-color-secondary;
-        line-height: 1.4;
-        width: 80%;
-        max-width: 800px;
+    &__socials {
+        font-size: 24px;
+        flex-shrink: 0;
 
-        z-index: 1;
-            @media screen and (max-width : 500px) {
-                    bottom: 50%;
+        > a {
+            padding: 0 10px;
+            transition: font-size .2s;
+            line-height: 1;
+            
+            &:hover {
+                font-size: 40px;
+                color: #fff;
             }
-    }
+        }
 
-    &__author {
-        display: block;
-        text-align: right;
-        font-size: 12px;
-        font-style: italic;
+        @media screen and (max-width : 500px) {
+            display: none;
+        }
+    }   
+
+    &__text {
+        font-size: 20px;
+        padding: 40px 70px;
+        text-align: center;
+        background-color: #fff;
+
+        > strong {
+            font-weight: bold;
+        }
+
+        @media screen and (max-width : 500px) {
+            font-size: 18px;
+            padding: 20px 30px;
+        }
     }
 
     &__scrollDown {
@@ -63,13 +85,17 @@
         position: absolute;
         
         z-index: 3;
-        bottom: 10px;
+        bottom: 20px;
         left: 50%;
         transform: translateX(-50%);  
 
         animation: jump 4s infinite;
 
         cursor: pointer;
+
+        @media screen and (max-width : 500px) {
+            display: none;
+        }
     }
 }
 

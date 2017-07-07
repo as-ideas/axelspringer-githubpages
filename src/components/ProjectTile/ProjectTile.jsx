@@ -5,8 +5,8 @@ import GitHubService from '../../services/GitHubService';
 
 import './ProjectTile.scss';
 
-var FaPlayCircle = require('react-icons/lib/fa/play-circle');
 import TrackerService from '../../services/TrackingService'
+var FontAwesome = require('react-fontawesome');
 
 export default class ProjectTile extends Component {
     constructor(props) {
@@ -45,7 +45,7 @@ export default class ProjectTile extends Component {
                     <img className='projectTile__logo' src={this.state.stats.owner ? this.state.stats.owner.avatar_url : ''} />
                 </h3>
                 <p className='projectTile__description'>{this.props.projectData.description}</p>
-                <button className='projectTile__videoButton' onClick={this.openVideo.bind(this)}><FaPlayCircle /> Erklärvideo</button>
+                <button className='projectTile__videoButton' onClick={this.openVideo.bind(this)}><FontAwesome name='play-circle' style={{ fontSize: '20px' }} /> Erklärvideo</button>
                 <GitHubStats stats={this.state.stats} />
             </div>
         );

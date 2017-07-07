@@ -9,7 +9,7 @@
         margin: 0 1.5% 30px;
         box-sizing: border-box;
 
-        transition: background-color .2s;
+        transition: .2s;
 
         .gitHubStats__container {
             transition: background-color .2s;
@@ -17,7 +17,7 @@
 
         &:hover {
             background-color: #f7f7f7;
-
+            box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
             .gitHubStats__container {
                 background-color: #fff;
             }

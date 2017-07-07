@@ -7,26 +7,24 @@ import ProgressiveImage from '../../components/ProgressiveImage/ProgressiveImage
 export default (props) => {
   function scrollDown() {
     let navHeight = document.querySelector('nav').offsetHeight;
-    let elemOffset = document.querySelector('#projects').getBoundingClientRect().top + window.pageYOffset
+    let elemOffset = document.querySelector('#home').getBoundingClientRect().bottom + window.pageYOffset
 
     window.scrollTo(0, elemOffset - navHeight);
   }
 
   return (
     <header className='hero__container' id='home'>
+      <div className='hero__imageContainer'>
+        <ProgressiveImage className='hero__image' src='static/work.jpg' thumbnail='static/thumbnails/work.jpg' />
+        <div className='hero__bottomContainer'>
+          <p className='hero__bottomText'>There‘s more to it.</p>
+          <Socials className='hero__socials' />
+        </div>
+        {/*<img className='hero__scrollDown' src='static/arrow.png' onClick={scrollDown} />*/}
+      </div>
       <p className='hero__text'>
-        Lorem <strong>ipsum</strong> dolor sit amet, consetetur sadipscing elitr,
-          sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-          At vero eos et accusam et justo duo dolores et ea rebum. <strong>Stet clita</strong> kasd gubergren, no sea takimata
-          sanctus est Lorem <strong>ipsum dolor sit</strong> amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-          sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-          At vero eos et accusam et <strong>justo duo dolores</strong> et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-          Lorem ipsum dolor sit amet.
-          <span className='hero__author'>Äxel</span>
-      </p>
-      <Socials />
-      <ProgressiveImage className='hero__image' src='static/work.jpg' thumbnail='static/thumbnails/work.jpg' blurRadius='20' />
-      <img className='hero__scrollDown' src='static/arrow.png' onClick={scrollDown} />
-    </header>
+        Nowadays the largest source of revenue at <strong>Axel Springer</strong> and it’s companies is the digital business. Hence, sharing of best practices and practical solutions plays a huge role in our everyday work. That’s why we’re going public with some of our projects here. <strong>We love the idea of cooperating inhouse and with everyone outside who can benefit from the things we’ve built.</strong> Even better if you join us in discussion and development!
+      </p >
+    </header >
   );
 }
