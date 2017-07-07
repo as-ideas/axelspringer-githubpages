@@ -21,19 +21,12 @@ exports[`Jobs component should render as expected 1`] = `
     <p
       className="jobs__adHeading"
     >
-      Lust bei uns mitzucoden?
+      Want to code with us?
     </p>
     <p
       className="jobs__adSubheading"
     >
-      Dann gleich auf unserem Karriereportal nachschauen:
-    </p>
-    <p
-      className="jobs__adSubheading"
-    >
-      <strong>
-        Wir haben viele offene IT-Stellen!
-      </strong>
+      We offer many vacancies in IT!
     </p>
   </div>
   <a
@@ -41,7 +34,7 @@ exports[`Jobs component should render as expected 1`] = `
     href="https://career.axelspringer.com/"
     onClick={[Function]}
   >
-    Hier geht's zu unseren Jobs
+    Find your new job
   </a>
 </section>
 `;
